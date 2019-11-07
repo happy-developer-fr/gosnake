@@ -10,3 +10,10 @@
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
+gosnake
+
+
+# intellij
+.DS_Store
+.idea
+*.iml

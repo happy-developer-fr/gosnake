@@ -1,1 +1,3 @@
 go test ./...
+
+go test ./... -bench Cell -benchtime 3s

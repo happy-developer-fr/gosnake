@@ -13,30 +13,6 @@ type instruction struct {
 func StartReading() chan instruction {
 	c := make(chan instruction)
 
-	//go func() {
-	//	scanner := bufio.NewReaderSize(os.Stdin, 1)
-	//	for {
-	//		timer := time.NewTimer(time.Millisecond * 30)
-	//		<-timer.C
-	//
-	//		ascii, err := scanner.ReadByte()
-	//		if err != nil {
-	//			fmt.Println(err.Error())
-	//			return
-	//		}
-	//		switch ascii {
-	//		case 68:
-	//			c <- direction.West
-	//		case 67:
-	//			c <- direction.East
-	//		case 66:
-	//			c <- direction.South
-	//		case 65:
-	//			c <- direction.North
-	//		}
-	//	}
-	//}()
-
 	err := term.Init()
 	if err != nil {
 		panic(err)

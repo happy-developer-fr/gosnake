@@ -18,6 +18,7 @@ func main() {
 		fmt.Println(err.Error())
 		return
 	}
+	foodNumber := size / 2
 	chanReading := key.StartReading()
 	snakeB := snake.SnakeBoard(size)
 	snk := snake.Snake{}
@@ -43,7 +44,7 @@ func main() {
 		time.Sleep(200 * time.Millisecond)
 		screenclear.CleanScreen()
 
-		snakeB.Feed(5)
+		snakeB.Feed(foodNumber)
 	}
 }
 
@@ -55,7 +56,7 @@ func getSize() (int, error) {
 	}
 
 	if size, err := strconv.Atoi(os.Args[1]); err != nil || size < minsize {
-		message := fmt.Sprintf("Size should be an integer greater than", minsize)
+		message := fmt.Sprintf("Size should be an integer greater than %d", minsize)
 		return 0, errors.New(message)
 	} else {
 		return size, nil
